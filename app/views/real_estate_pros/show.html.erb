@@ -1,0 +1,15 @@
+<h1><%=@realtypros.office_name.camelize%></h1>
+<br/>
+<br/>
+
+Phone:<%= @realtypros.office_phone%>
+<br/>
+<br/>
+<br/>
+<%= link_to('Edit Information', :action => 'edit', :id => params[:id])%>
+<br/>
+<br/>
+<%= link_to('Delete Realtor', :action => 'destroy', data: { confirm: 'Are you sure?'}, :id => @realtypros.id)%>
+<br/>
+<br/>
+<%= link_to('Home', :action => 'index') %>

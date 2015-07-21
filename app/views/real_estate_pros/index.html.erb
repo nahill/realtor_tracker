@@ -1,0 +1,26 @@
+<h1> </h1>
+<h1 align='center'>REAL ESTAE PROS</h1>
+<table align='center', even-row-bg='black'>
+  <th align="left">Realty Office</th>
+  <th align="left">Phone</th>
+   <tr>
+     <td>
+        <% @realtypros.each do |rltr|%>
+       <%= link_to rltr.office_name.upcase, :action => 'show', :id => rltr.id %>
+       <br/>
+       <%end%>
+     </td>
+   
+     <td>
+       <% @rltypros.each do |rltr| %>
+       <%= rltr.office_phone.to_s.upcase%>
+       <br/>
+       <%end%>
+     </td>
+     
+   </tr>
+</table>
+</br>
+<div align='center'>
+  <a href="/real_estate_pros/new" class="button">Add New Realtor</a>
+</div>

@@ -1,0 +1,25 @@
+
+<br/>
+<br/>
+<div class="row collapse">
+  <h1 align="center", font-height="10">ADD NEW REALTOR</h1>
+  <div class="large-3 columns">&nbsp</div>
+    <div class="large-6 columns">
+        <%=form_for(:realtors, :url => {:action => 'create'}, :builder => Judge::FormBuilder) do |r|%>
+        <%="Office Name"%>
+        <br/>
+      <%=r.text_field(:office_name)%>
+        <br/>
+        <%="Office Phone"%>
+        <br/>
+        <%=r.text_field(:office_phone)%>
+        <br/>
+        <input name="commit" type="submit" value="Add New Realtor" class="button" />
+        <!-- This is a submit tag in erb <%=submit_tag('Add New Realtor')%> -->
+    
+        <%end%>
+        <br/>
+        <%= link_to('Cancel', :action => 'index') %>
+      </div>
+     <div class="large-3 columns"></div>
+</div>
