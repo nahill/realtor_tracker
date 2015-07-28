@@ -1,7 +1,11 @@
 class RealEstateProsController < ApplicationController
   def index
-    @realtypros = Realtors.order(:office_name)
-    @rltypros = Realtors.all
+    @realtypros = Realtors.all.order(:office_name)
+    #Need to below code to work and display correctly
+#@search = Realtors.search do
+#      fulltext params[:search]
+#    end
+#    @realtypros = @search.results
   end
 
   def show

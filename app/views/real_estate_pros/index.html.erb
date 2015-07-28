@@ -1,26 +1,28 @@
-<h1> </h1>
 <h1 align='center'>REAL ESTAE PROS</h1>
+
+<%= form_tag root_path,   :method => :get do%>
+<p><%=search_field_tag :search, params[:search]%></p>
+<%= submit_tag "Search", :name => nil%>
+<%end%>
+
+<div class="row" >
+  <div class="large-9 column">
 <table align='center', even-row-bg='black'>
+<tr>
   <th align="left">Realty Office</th>
   <th align="left">Phone</th>
-   <tr>
-     <td>
-        <% @realtypros.each do |rltr|%>
-       <%= link_to rltr.office_name.upcase, :action => 'show', :id => rltr.id %>
-       <br/>
-       <%end%>
-     </td>
-   
-     <td>
-       <% @rltypros.each do |rltr| %>
-       <%= rltr.office_phone.to_s.upcase%>
-       <br/>
-       <%end%>
-     </td>
-     
-   </tr>
+</tr>
+  <% @realtypros.each do |rltr|%>
+ <tr>     
+   <td><%= link_to rltr.office_name.upcase, :action => 'show', :id => rltr.id %></td> 
+   <td><%= rltr.office_phone.to_s.upcase%></td>
+ </tr>   
+  <%end%>   
 </table>
-</br>
-<div align='center'>
-  <a href="/real_estate_pros/new" class="button">Add New Realtor</a>
 </div>
+
+  <div class="large-3 column medium-3 column small-3 column" style="border: 2px solid #466d98; height: 400px;">
+    <h1><a href="/real_estate_pros/new" class="button">Add New Realtor</a></h1>
+  </div>
+</div>
+</br> 
