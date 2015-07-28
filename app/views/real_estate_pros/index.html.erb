@@ -1,10 +1,15 @@
 <h1 align='center'>REAL ESTAE PROS</h1>
-
-<%= form_tag root_path,   :method => :get do%>
-<p><%=search_field_tag :search, params[:search]%></p>
-<%= submit_tag "Search", :name => nil%>
-<%end%>
-
+<div>
+  <div class="large-9 column">
+  </div>
+  <div class="large-3 column">
+     <h1><%= form_tag root_path,   :method => :get do%>
+     <p><%=search_field_tag :search, params[:search]%></p>
+     <%= submit_tag "Search", :name => nil%>
+     <%end%>
+    </h1>
+  </div>
+</div>
 <div class="row" >
   <div class="large-9 column">
 <table align='center', even-row-bg='black'>
