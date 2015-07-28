@@ -3,6 +3,7 @@ capybara-*.html
 .rspec
 /log
 tmp/**/*
+/tmp/build_235b98acff760d28681a34955b25885e/**/*
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /public/system
