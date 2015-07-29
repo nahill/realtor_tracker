@@ -2,11 +2,13 @@ class RealEstateProsController < ApplicationController
   def index
    # @realtypros = Realtors.all.order(:office_name)
     #Need to below code to work and display correctly
-  @search = Realtors.search do
+    #Oops messed up naming conventions
+    count = Realtors.count
+    @search = Realtors.search do
     fulltext(params[:search])
-    paginate :page => 1, :per_page => 30
+    paginate :page => 1, :per_page => count 
   end
-  @realtypros = @search.results
+    @realtypros = @search.results.sort_by{|r| r[:office_name]}
  
 end
 
