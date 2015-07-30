@@ -5,6 +5,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+
 group :production do
   gem 'pg'
 end
@@ -15,13 +16,13 @@ gem 'sunspot_solr'
 # Used for fulltext searching
 gem 'sprockets', '2.11.0'
 gem 'sunspot_rails'
-gem 'turbo-sprockets-rails3'
+#gem 'turbo-sprockets-rails3', '0.3.14'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 gem 'jquery-validation-rails'
@@ -39,7 +40,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Foundation for front end framework
-gem 'foundation-rails'
+gem 'foundation-rails', '5.5.2.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
