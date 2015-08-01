@@ -16,7 +16,7 @@ gem 'sunspot_solr'
 # Used for fulltext searching
 gem 'sprockets', '2.11.0'
 gem 'sunspot_rails'
-#gem 'turbo-sprockets-rails3', '0.3.14'
+gem 'turbo-sprockets-rails3'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -24,7 +24,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+gem 'therubyracer',  platforms: :ruby
 gem 'jquery-validation-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

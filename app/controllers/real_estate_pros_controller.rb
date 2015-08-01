@@ -4,12 +4,12 @@ class RealEstateProsController < ApplicationController
     #Need to below code to work and display correctly
     #Oops messed up naming conventions
     count = Realtors.count
-    @search = Realtors.search do
+    search = Realtors.search do
     fulltext(params[:search])
     paginate :page => 1, :per_page => count 
   end
-    @realtypros = @search.results.sort_by{|r| r[:office_name]}
- 
+    @realtypros = search.results.sort_by{|r| r[:office_name]}
+    
 end
 
   def show

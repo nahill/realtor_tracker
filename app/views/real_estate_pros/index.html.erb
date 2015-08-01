@@ -3,11 +3,7 @@
   <div class="large-9 column">
   </div>
   <div class="large-3 column">
-    <p>Search the realtor database</p>
-     <h1><%= form_tag root_path,   :method => :get do%>
-     <p><%=search_field_tag :search, params[:search]%></p>
-     <%= submit_tag "Search", :name => nil%>
-     <%end%>
+   <h1>
     </h1>
   </div>
 </div>
@@ -29,6 +25,14 @@
 
   <div class="large-3 column medium-3 column small-3 column" style="border: 2px solid #466d98; height: 400px;">
     <h1><a href="/real_estate_pros/new" class="button">Add New Realtor</a></h1>
+    </br>
+  </br>
+</br>
+     <p>Search the realtor database</p>
+     <h1><%= form_tag root_path,   :method => :get do%>
+     <p><%=search_field_tag :search, params[:search]%></p>
+     <%= submit_tag  :Search, :class => "button", :name => nil%>
+       <%end%>
   </div>
 </div>
 </br> 
