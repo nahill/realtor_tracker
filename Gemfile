@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 group :development, :test do
   gem 'sqlite3'
 end
-
+gem 'rails_12factor', group: :production
 
 group :production do
   gem 'pg'
@@ -53,4 +53,4 @@ gem 'foundation-rails', '5.5.2.1'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+ruby "2.1.1", group: :production
