@@ -53,4 +53,4 @@ gem 'foundation-rails', '5.5.2.1'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-ruby "2.1.1", group: :production
+
