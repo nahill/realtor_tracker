@@ -16,7 +16,7 @@ gem 'sunspot_solr'
 # Used for fulltext searching
 gem 'sprockets', '2.11.0'
 gem 'sunspot_rails'
-gem 'turbo-sprockets-rails3'
+#gem 'turbo-sprockets-rails3'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
