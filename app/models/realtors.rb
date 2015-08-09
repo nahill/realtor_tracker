@@ -1,6 +1,6 @@
 class Realtors < ActiveRecord::Base
   validates :office_name, :presence => true
   
-  searchkick
+  scope :realtor_search, -> (office_name) { where("office_name like ?", "#{office_name}%")}
 end
 

@@ -2,12 +2,12 @@ class RealEstateProsController < ApplicationController
   
   
   def index
-    Realtors.reindex
+    #Realtors.reindex
    # @realtypros = Realtors.all.order(:office_name)
     #Need to below code to work and display correctly
     #Oops messed up naming conventions
-    count = Realtors.count
-    realtors = Realtors.search("#{(params[:search])}")
+    #count = Realtors.count
+    realtors = Realtors.realtor_search("#{(params[:search])}")
     #paginate :page => 1, :per_page => count 
  
     @realtypros = realtors.sort_by{|r| r[:office_name]}
