@@ -1,14 +1,16 @@
 class RealEstateProsController < ApplicationController
+  
+  
   def index
+    Realtors.reindex
    # @realtypros = Realtors.all.order(:office_name)
     #Need to below code to work and display correctly
     #Oops messed up naming conventions
     count = Realtors.count
-    search = Realtors.search do
-    fulltext(params[:search])
-    paginate :page => 1, :per_page => count 
-  end
-    @realtypros = search.results.sort_by{|r| r[:office_name]}
+    realtors = Realtors.search("#{(params[:search])}")
+    #paginate :page => 1, :per_page => count 
+ 
+    @realtypros = realtors.sort_by{|r| r[:office_name]}
     
 end
 
@@ -58,7 +60,7 @@ end
 end
 
 
-private 
+ private 
 
 def realtor_params
   params.require(:realtors).permit(:office_name, :office_phone,)
