@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 # Use sqlite3 as the database for Active Record
-
+gem 'rack-wwwhisper', '~> 1.0'
 group :development, :test do
   gem 'sqlite3'
 end

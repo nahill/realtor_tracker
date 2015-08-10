@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.8)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
     coffee-rails (4.1.0)
@@ -74,11 +75,16 @@ GEM
     minitest (5.8.0)
     multi_json (1.11.2)
     multipart-post (2.0.0)
+    net-http-persistent (2.9.4)
     pg (0.18.2)
     polyglot (0.3.5)
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-wwwhisper (1.1.9)
+      addressable (~> 2.0)
+      net-http-persistent
+      rack (~> 1.0)
     rails (4.1.0)
       actionmailer (= 4.1.0)
       actionpack (= 4.1.0)
@@ -157,6 +163,7 @@ DEPENDENCIES
   jquery-validation-rails
   judge
   pg
+  rack-wwwhisper (~> 1.0)
   rails (= 4.1.0)
   rails_12factor
   sass-rails
