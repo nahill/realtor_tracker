@@ -1,6 +1,8 @@
 class RealEstateProsController < ApplicationController
   
-  
+  def landing
+    render 'landing'
+  end
   def index
     #Realtors.reindex
    # @realtypros = Realtors.all.order(:office_name)

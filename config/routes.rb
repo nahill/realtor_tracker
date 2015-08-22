@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 mount Judge::Engine => '/judge'
   # You can have the root of your site routed with "root"
-  root 'real_estate_pros#index'
+  root 'real_estate_pros#landing'
   match ':controller(/:action(/:id))', :via => [:get, :post]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
