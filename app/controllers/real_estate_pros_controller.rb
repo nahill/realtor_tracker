@@ -11,9 +11,8 @@ class RealEstateProsController < ApplicationController
     #count = Realtors.count
     realtors = Realtors.realtor_search("#{(params[:search])}")
     #paginate :page => 1, :per_page => count 
- 
-    @realtypros = realtors.sort_by{|r| r[:office_name]}
-    
+
+  @realtypros = realtors.sort_by{|r| r[:office_name]}
 end
 
   def show

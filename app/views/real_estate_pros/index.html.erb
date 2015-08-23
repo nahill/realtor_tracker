@@ -10,6 +10,9 @@
 <div class="row" >
   <div class="large-9 column">
 <table align='center', even-row-bg='black'>
+   <%if (@realtypros.empty?)%>
+  <h2>No Realtors Found =(</h2>
+  <%else%>
 <tr>
   <th align="left">Realty Office</th>
   <th align="left">Phone</th>
@@ -20,6 +23,7 @@
    <td><%= rltr.office_phone.to_s.upcase%></td>
  </tr>   
   <%end%>   
+  <%end%>
 </table>
 </div>
 
@@ -29,7 +33,7 @@
   </br>
 </br>
      <p>Search the realtor database</p>
-     <h1><%= form_tag root_path,   :method => :get do%>
+<h1><%= form_tag :path => "real_estate_pros#index",   :method => :get do%>
      <p><%=search_field_tag :search, params[:search]%></p>
      <%= submit_tag  :Search, :class => "button", :name => nil%>
        <%end%>
