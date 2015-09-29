@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 # Use sqlite3 as the database for Active Record
 gem 'rack-wwwhisper', '~> 1.0'
+gem 'devise', '~> 3.5.2'
 group :development, :test do
   gem 'sqlite3'
 end
@@ -8,6 +9,7 @@ gem 'rails_12factor', group: :production
 gem 'yaml_db'
 group :production do
   gem 'pg'
+  
 end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'

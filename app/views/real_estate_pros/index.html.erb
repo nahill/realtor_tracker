@@ -27,16 +27,20 @@
 </table>
 </div>
 
-  <div class="large-3 column medium-3 column small-3 column" style="border: 2px solid #466d98; height: 400px;">
+  <div class="large-3 column medium-3 column small-3 column" style="border: 2px solid #466d98; height: 600px;">
     <h1><a href="/real_estate_pros/new" class="button">Add New Realtor</a></h1>
     </br>
   </br>
 </br>
      <p>Search the realtor database</p>
-<h1><%= form_tag :path => "real_estate_pros#index",   :method => :get do%>
-     <p><%=search_field_tag :search, params[:search]%></p>
-     <%= submit_tag  :Search, :class => "button", :name => nil%>
-       <%end%>
+<h1><%= form_tag('/real_estate_pros/index') do%>
+    <p><%=search_field_tag :search, params[:search]%></p>
+    <%= submit_tag  :search, :class => "button", :name => nil%>
+  <%end%>
+  
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "button" %>
+
+</h1>
   </div>
 </div>
 </br> 

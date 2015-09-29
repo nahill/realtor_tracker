@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "Realtor Tracker" %></title>
+    <%= javascript_include_tag :defaults %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application" 'data-turbolinks-track' => true %>
@@ -12,10 +13,14 @@
   </head>
 
   <body align='center'>
+    
+     <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+    
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><%= link_to('Real Estate Pros', :action => 'index')%></h1>
+      <h1><%= link_to('Real Estate Pros', :url => '/real_estate_pros/index')%></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>

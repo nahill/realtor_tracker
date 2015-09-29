@@ -1,8 +1,6 @@
 class RealEstateProsController < ApplicationController
-  
-  def landing
-    render 'landing'
-  end
+      before_action :authenticate_user!
+
   def index
     #Realtors.reindex
    # @realtypros = Realtors.all.order(:office_name)

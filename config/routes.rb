@@ -1,13 +1,26 @@
 Rails.application.routes.draw do
+  devise_for :users
+  match ':controller(/:action(/:id))', :via => [:get, :post]
+  
+  #devise_for :users do
+  #get '/users/sign_out' => 'devise/sessions#destroy'
+  #end
+  devise_scope :user do
+    
+  get "sign_in", to: "devise/sessions#new"
+  end
+  # You can have the root of your site routed with "root"
+  root to: 'real_estate_pros#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-mount Judge::Engine => '/judge'
-  # You can have the root of your site routed with "root"
-  root 'real_estate_pros#landing'
-  match ':controller(/:action(/:id))', :via => [:get, :post]
+  mount Judge::Engine => '/judge'
+  
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
+  devise_scope :user do
+  get "sign_in", to: "devise/sessions#new"
+  end
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
