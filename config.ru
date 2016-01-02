@@ -2,5 +2,5 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run Rails.application
-require 'rack/wwwhisper'
-use Rack::WWWhisper
+#require 'rack/wwwhisper'
+#use Rack::WWWhisper
