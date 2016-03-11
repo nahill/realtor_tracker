@@ -3,17 +3,18 @@
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class='row'>
         
-        <div class: 'col-xs-4'>
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, class: "form-control input-lg", type: "text", placeholder: "Email" %>
-        </div>
+            <div class: 'col-xs-4'>
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, class: "form-control input-lg", type: "text", placeholder: "Email" %>
+            </div>
         
             <div class: 'col-xs-4'>
               <%= f.label :password %><br />
-              <%= f.password_field :password, autocomplete: "off", class: "form-control input-lg", type: "text", placeholder: "Password"%>
+              <%= f.password_field :password, autocomplete: "off", class: "form-control input-lg", placeholder: "Password"%>
+                                                              <!-- removed 'type: "text",' was showing password on input -->
             </div>
       
-     </div>
+      </div>
     
                   <% if devise_mapping.rememberable? -%>
                     <div class="field">
@@ -22,9 +23,9 @@
                     </div>
                   <% end -%>
    
-                  <div class="actions">
-                  <%= f.submit "Log in" %>
-                  </div>
+                    <div class="actions">
+                    <%= f.submit "Log in" %>
+                    </div>
     <% end %>
 </div>
 <%= render "devise/shared/links" %>

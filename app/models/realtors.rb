@@ -1,13 +1,8 @@
 class Realtors < ActiveRecord::Base
   validates :office_name, :presence => true
   
-  
-  
-  
   scope :realtor_search, -> (office_name) { where("office_name like ?", "#{office_name}%").reorder(:office_name)}
-  
-  
-  
+
   
   def self.dedupe
     #find all models and group them on keys which should be common

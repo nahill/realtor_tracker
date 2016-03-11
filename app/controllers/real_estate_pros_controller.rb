@@ -2,16 +2,11 @@ class RealEstateProsController < ApplicationController
       before_action :authenticate_user!
 
   def index
-    #Realtors.reindex
-   # @realtypros = Realtors.all.order(:office_name)
-    #Need to below code to work and display correctly
     #Oops messed up naming conventions
-    #count = Realtors.count
     realtors = Realtors.realtor_search("#{(params[:search])}")
-    #paginate :page => 1, :per_page => count 
 
   @realtypros = realtors.sort_by{|r| r[:office_name]}
-end
+  end
 
   def show
     @realtypros = Realtors.find_by_id(params[:id])
