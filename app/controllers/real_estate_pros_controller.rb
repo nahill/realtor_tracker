@@ -57,5 +57,5 @@ end
  private 
 
 def realtor_params
-  params.require(:realtors).permit(:office_name, :office_phone,)
+  params.require(:realtors).permit(:office_name, :office_phone, :last_visited, :office_address, :email, :broker, :contact_name, :notes)
 end

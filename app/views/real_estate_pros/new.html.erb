@@ -8,11 +8,35 @@
         <%=form_for(:realtors, :url => {:action => 'create'}, :builder => Judge::FormBuilder) do |r|%>
         <%="Office Name"%>
         <br/>
-      <%=r.text_field(:office_name)%>
+        <%=r.text_field(:office_name)%>
         <br/>
         <%="Office Phone"%>
         <br/>
         <%=r.text_field(:office_phone)%>
+        <br/>
+        <%="Address"%>
+        <br/>
+        <%=r.text_field(:office_address)%>
+        <br/>
+        <%= "Email"%>
+        <br/>
+        <%=r.text_field(:email)%>
+        <br/>
+        <%="Broker"%>
+        <br/>
+        <%=r.text_field(:broker)%>
+        <br/>
+        <%="Name"%>
+        <br/>
+        <%=r.text_field(:contact_name)%>
+        <br/>
+        <%="Last Visited"%>
+        <br/>
+        <%=r.date_field(:last_visited)%>
+        <br/>
+        <%="Notes"%>
+        <br/>
+        <%=r.text_area(:notes)%>
         <br/>
         <input name="commit" type="submit" value="Add New Realtor" class="button" />
         <!-- This is a submit tag in erb <%=submit_tag('Add New Realtor')%> -->
