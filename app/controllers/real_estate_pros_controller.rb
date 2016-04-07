@@ -5,11 +5,19 @@ class RealEstateProsController < ApplicationController
     #Oops messed up naming conventions
     realtors = Realtors.realtor_search("#{(params[:search])}")
 
-  @realtypros = realtors.sort_by{|r| r[:office_name]}
+    @realtypros = realtors.sort_by{|r| r[:office_name]}
   end
 
   def show
     @realtypros = Realtors.find_by_id(params[:id])
+    
+    if @realtynotice == nil 
+      @realtynotice = 'true'
+      else if @realtynotice = @realtypros.last_visited < 14.day.ago
+        @realtynotice = 'true'
+      else
+      end
+    end
   end
 
   def new
@@ -57,5 +65,5 @@ end
  private 
 
 def realtor_params
-  params.require(:realtors).permit(:office_name, :office_phone,)
+  params.require(:realtors).permit(:office_name, :office_phone, :last_visited, :office_address, :email, :broker, :contact_name, :notes)
 end

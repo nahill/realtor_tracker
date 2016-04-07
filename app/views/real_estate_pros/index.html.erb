@@ -16,11 +16,13 @@
 <tr>
   <th align="left">Realty Office</th>
   <th align="left">Phone</th>
+  <th align="left">Last Visited</th>
 </tr>
   <% @realtypros.each do |rltr|%>
  <tr>     
    <td><%= link_to rltr.office_name.upcase, :action => 'show', :id => rltr.id %></td> 
    <td><%= rltr.office_phone.to_s.upcase%></td>
+   <td><%= rltr.last_visited.to_s.upcase%></td>
  </tr>   
   <%end%>   
   <%end%>

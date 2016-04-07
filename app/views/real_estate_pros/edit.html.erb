@@ -14,6 +14,32 @@
         <br/>
         <%=r.text_field(:office_phone)%>
         <br/>
+        <%="Address"%>
+        <br/>
+        <%=r.text_field(:office_address)%>
+        <br/>
+        <%= "Email"%>
+        <br/>
+        <%=r.text_field(:email)%>
+        <br/>
+        <%="Broker"%>
+        <br/>
+        <%=r.text_field(:broker)%>
+        <br/>
+        <%="Contact Name"%>
+        <br/>
+        <%=r.text_field(:contact_name)%>
+        <br/>
+        <%="Last Visited"%>
+        <br/>
+        <%= @realtors.last_visited %>
+        <br/>
+        <%=r.date_field(:last_visited, :value => @realtors.last_visited)%>
+        <br/>
+        <%="Notes"%>
+        <br/>
+        <%=r.text_area(:notes)%>
+        <br/>
         <input name="commit" type="submit" value="Update Realtor Info" class="button" />
       <!-- This is a submit tag in erb <%=submit_tag('Update Realtor Info')%> -->
     

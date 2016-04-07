@@ -24,5 +24,5 @@ class Realtors < ActiveRecord::Base
     end
   end
   
-  end
+end
 

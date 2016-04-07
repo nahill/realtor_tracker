@@ -2,9 +2,31 @@
 <br/>
 <br/>
 
+    <%if @realtynotice %>
+        <h3>Stop Needed</h3>
+    <%else%>
+        <h3>No Stop Needed</h3>
+    <%end%>
+
+<br/>
 Phone:<%= @realtypros.office_phone%>
 <br/>
+Address:<%= @realtypros.office_address%>
 <br/>
+Email:<%= @realtypros.email%>
+<br/>
+Broker:<%= @realtypros.broker%>
+<br/>
+Contact Name:<%= @realtypros.contact_name%>
+</br>
+Last Visited:<%= @realtypros.last_visited%>
+<br/>
+<br/>
+Notes:
+</br>
+<p>
+	<%= @realtypros.notes%>
+</p>
 <br/>
 <%= link_to('Edit Information', :action => 'edit', :id => params[:id])%>
 <br/>
