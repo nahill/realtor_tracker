@@ -2,6 +2,13 @@
 <br/>
 <br/>
 
+    <%if @realtynotice %>
+        <h3>Stop Needed</h3>
+    <%else%>
+        <h3>No Stop Needed</h3>
+    <%end%>
+
+<br/>
 Phone:<%= @realtypros.office_phone%>
 <br/>
 Address:<%= @realtypros.office_address%>
