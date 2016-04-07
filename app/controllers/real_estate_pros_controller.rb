@@ -11,11 +11,12 @@ class RealEstateProsController < ApplicationController
   def show
     @realtypros = Realtors.find_by_id(params[:id])
     
-    if @realtynotice == nil 
+    if @realtypros.last_visited == nil 
       @realtynotice = 'true'
-      else if @realtynotice = @realtypros.last_visited < 14.day.ago
+      else if @realtypros.last_visited < 14.day.ago
         @realtynotice = 'true'
       else
+        @realtynotice = 'false'
       end
     end
   end
