@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407154955) do
+ActiveRecord::Schema.define(version: 20160407211422) do
 
   create_table "realtors", force: true do |t|
     t.string   "office_name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160407154955) do
     t.string   "broker"
     t.string   "contact_name"
     t.string   "notes"
+    t.boolean  "visit_needed"
   end
 
   create_table "users", force: true do |t|

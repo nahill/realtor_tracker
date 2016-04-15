@@ -2,10 +2,15 @@
 <br/>
 <br/>
 <div class="row collapse">
-  <h1 align="center", font-height="10">EDIT REALTOR INFO</h1>
+  
+  <h1 align="center", font-height="10">EDIT REALTOR INFO</h1> 
   <div class="large-3 columns">&nbsp</div>
     <div class="large-6 columns">
+      
       <%=form_for(:realtors, :url => {:action => 'update', :id => params[:id]}) do |r|%>
+        <% @realtors.errors.full_messages.each do |msg| %>
+        <%= msg %>
+        <%end%>
         <%="Office Name"%>
         <br/>
         <%=r.text_field(:office_name)%>
@@ -32,9 +37,9 @@
         <br/>
         <%="Last Visited"%>
         <br/>
-        <%= @realtors.last_visited %>
+        <%= @lastv %>
         <br/>
-        <%=r.date_field(:last_visited, :value => @realtors.last_visited)%>
+        <%=r.date_field(:last_visited, :value => @lastv )%>
         <br/>
         <%="Notes"%>
         <br/>

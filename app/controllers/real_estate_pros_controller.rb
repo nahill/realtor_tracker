@@ -4,7 +4,7 @@ class RealEstateProsController < ApplicationController
   def index
     #Oops messed up naming conventions
     realtors = Realtors.realtor_search("#{(params[:search])}")
-
+    
     @realtypros = realtors.sort_by{|r| r[:office_name]}
   end
 
@@ -12,11 +12,11 @@ class RealEstateProsController < ApplicationController
     @realtypros = Realtors.find_by_id(params[:id])
     
     if @realtypros.last_visited == nil 
-      @realtynotice = 'true'
-      else if @realtypros.last_visited < 14.day.ago
-        @realtynotice = 'true'
+      @realtynotice = true
+      else if @realtypros.last_visited <= 14.day.ago
+        @realtynotice = true
       else
-        @realtynotice = 'false'
+        @realtynotice = false
       end
     end
   end
@@ -36,14 +36,23 @@ class RealEstateProsController < ApplicationController
   
   def edit
     @realtors = Realtors.find(params[:id])
+    if @realtors.last_visited == nil
+      @lastv = "No Date Set"
+    else
+      @lastv = @realtors.last_visited
+    end
   end
 
   def update
     @realtypros = Realtors.find(params[:id])
-    if  @realtypros.update_attributes(realtor_params)
-      redirect_to(:action => 'index')
+    if @realtypros.update_attributes(realtor_params)
+      redirect_to(:action => 'index' )
     else
-      render 'edit'
+      @realtypros.errors.full_messages.each do |msg|
+        flash[:notice] = msg
+      end
+      
+      redirect_to(:action => 'edit', :id => params[:id])
     end
   end
   
