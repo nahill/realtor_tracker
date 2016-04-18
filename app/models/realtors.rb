@@ -5,6 +5,19 @@ class Realtors < ActiveRecord::Base
   scope :realtor_search, -> (office_name) { where("office_name like ?", "#{office_name}%").reorder(:office_name)}
 
   
+  def go_visit?
+    if last_visited == nil 
+       return true
+      else if last_visited <= 14.day.ago
+        return true
+      else
+        return false
+      end
+    end
+  end
+
+  
+  
   def self.dedupe
     #find all models and group them on keys which should be common
     grouped = all.group_by{|model| [model.office_name]}

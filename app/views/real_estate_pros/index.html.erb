@@ -17,12 +17,18 @@
   <th align="left">Realty Office</th>
   <th align="left">Phone</th>
   <th align="left">Last Visited</th>
+  <th align="left">Visit Needed?</th>
 </tr>
   <% @realtypros.each do |rltr|%>
  <tr>     
    <td><%= link_to rltr.office_name.upcase, :action => 'show', :id => rltr.id %></td> 
    <td><%= rltr.office_phone.to_s.upcase%></td>
    <td><%= rltr.last_visited.to_s.upcase%></td>
+   <td><% if rltr.go_visit? %>
+       <%= "Yes" %>
+       <% else %>
+       <%= "No" %>
+       <% end %> </td>
  </tr>   
   <%end%>   
   <%end%>
@@ -35,14 +41,14 @@
   </br>
 </br>
      <p>Search the realtor database</p>
-<h1><%= form_tag('/real_estate_pros/index') do%>
-    <p><%=search_field_tag :search, params[:search]%></p>
-    <%= submit_tag  :search, :class => "button", :name => nil%>
-  <%end%>
+      <h1><%= form_tag('/real_estate_pros/index') do%>
+       <p><%=search_field_tag :search, params[:search]%></p>
+          <%= submit_tag  :search, :class => "button", :name => nil%>
+          <%end%>
   
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "button" %>
-
-</h1>
+          <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "button" %>
+       </h1>
+                 <%= link_to("You have #{@realtypros.count} realtors that need visits", "#" ) %>
   </div>
 </div>
 </br> 
