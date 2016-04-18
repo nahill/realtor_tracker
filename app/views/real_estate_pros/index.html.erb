@@ -38,6 +38,7 @@
   <div class="large-3 column medium-3 column small-3 column" style="border: 2px solid #466d98; height: 600px;">
     <h1><a href="/real_estate_pros/new" class="button">Add New Realtor</a></h1>
     </br>
+    <%= "You have #{@realtorcaption.count} realtors that need visits" %>
   </br>
 </br>
      <p>Search the realtor database</p>
@@ -48,7 +49,5 @@
   
           <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "button" %>
        </h1>
-                 <%= link_to("You have #{@realtypros.count} realtors that need visits", "#" ) %>
   </div>
 </div>
-</br> 

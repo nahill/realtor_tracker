@@ -6,7 +6,16 @@ class RealEstateProsController < ApplicationController
     realtors = Realtors.realtor_search("#{(params[:search])}")
     @realtypros = realtors.sort_by{|r| r[:office_name]}
     
+    visitchk = Realtors.all
     
+    @realtorcaption = []
+    
+    visitchk.each do |chk|
+      if chk.go_visit?
+        @realtorcaption.push(chk)
+      else
+      end
+    end
   end
 
   def show
