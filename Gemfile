@@ -25,7 +25,7 @@ gem 'sprockets', '2.11.0'
 
 
 #gem 'turbo-sprockets-rails3'
-# Use SCSS for stylesheets
+#  Use SCSS for stylesheets
 gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
