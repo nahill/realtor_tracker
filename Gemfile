@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rack-wwwhisper', '~> 1.0'
 
 gem 'devise', '~> 3.5.2'
+ gem 'rails_admin'
 
 group :development, :test do
   gem 'sqlite3'
