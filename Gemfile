@@ -17,7 +17,6 @@ gem 'yaml_db'
 
 group :production do
   gem 'pg'
-  gem 'rails_admin'
 end
   
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
