@@ -5,7 +5,9 @@ gem 'rack-wwwhisper', '~> 1.0'
 
 gem 'devise', '~> 3.5.2'
 
-gem 'rails_admin'
+group :production, :development do
+    gem 'rails_admin'
+end
 
 group :development, :test do
   gem 'sqlite3'
