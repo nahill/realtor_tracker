@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 gem 'rack-wwwhisper', '~> 1.0'
 
 gem 'devise', '~> 3.5.2'
- gem 'rails_admin'
+
+gem 'rails_admin'
 
 group :development, :test do
   gem 'sqlite3'
@@ -16,6 +17,7 @@ gem 'yaml_db'
 
 group :production do
   gem 'pg'
+  gem 'rails_admin'
 end
   
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
