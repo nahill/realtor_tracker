@@ -85,5 +85,5 @@ Rails.application.configure do
   
   # Use Rack-WWWhisper for authenication in production
   #config.middleware.insert 0, "Rack::WWWhisper"
-  config.action_mailer.default_url_options = { host: 'realtortracker.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'realtortracker.herokuapp.com' }
 end
