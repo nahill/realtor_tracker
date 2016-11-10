@@ -1,4 +1,24 @@
-<h2>Log in</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+  <style>
+  h2, body {
+    font-family: 'Paytone One', sans-serif;
+    }
+  </style>
+</head>
+
+<body>  
+</br>
+</br>
+</br>
+</br>
+</br>
+
+  <h2>Please log in.</h2>
+
+
 <div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class='row'>
@@ -23,9 +43,16 @@
                     </div>
                   <% end -%>
    
-                    <div class="actions">
-                    <%= f.submit "Log in" %>
-                    </div>
+                    
+                  <%= f.submit "Log in", class: "button round" %>
+                  
+                    
     <% end %>
 </div>
+
+<%= link_to("Skip log in", '/real_estate_pros/login_bypass') %><br/>
+
 <%= render "devise/shared/links" %>
+
+</body>
+</html>

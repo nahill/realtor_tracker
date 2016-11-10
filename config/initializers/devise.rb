@@ -12,7 +12,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'Realtortracker.herokuapp.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -169,7 +169,7 @@ Devise.setup do |config|
   # :both  = Enables both strategies
   # :none  = No unlock strategy. You should handle unlocking by yourself.
   # config.unlock_strategy = :both
-
+   config.unlock_strategy = :email
   # Number of authentication tries before locking an account if lock_strategy
   # is failed attempts.
   # config.maximum_attempts = 20
@@ -259,4 +259,8 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  
+  
+  #key for devise
+  config.secret_key = '6a2c65e9e58f2904667b224f9ddd18971173dd2866b5d535d6a4aecec8c8ac4a21a185154d85d7f06264a370ccc795ee988628f69991e7ba16936bf408e01fdc'
 end

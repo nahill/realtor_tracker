@@ -1,4 +1,13 @@
-<h1 align='center'>REAL ESTATE PROS.</h1>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+  <style>
+  .tag {
+    font-family: 'Paytone One', sans-serif;
+    }
+  </style>
+</head>
+
+<h1 class = 'tag' align='center'>REAL ESTATE PROS.</h1>
 <div>
   <div class="large-9 column">
   </div>
@@ -10,39 +19,44 @@
 <div class="row" >
   <div class="large-9 column">
 <table align='center', even-row-bg='black'>
-   <%if (@realtypros.empty?)%>
-  <h2>No Realtors Found =(</h2>
+  <%if (@realtypros.empty?)%>
+      <h2>No Realtors Found =(</h2>
   <%else%>
 <tr>
   <th align="left">Realty Office</th>
   <th align="left">Phone</th>
   <th align="left">Last Visited</th>
+  <th align="left">Visit Needed?</th>
 </tr>
   <% @realtypros.each do |rltr|%>
  <tr>     
    <td><%= link_to rltr.office_name.upcase, :action => 'show', :id => rltr.id %></td> 
    <td><%= rltr.office_phone.to_s.upcase%></td>
    <td><%= rltr.last_visited.to_s.upcase%></td>
+   <td><% if rltr.go_visit? %>
+       <%= "Yes" %>
+       <% else %>
+       <%= "No" %>
+       <% end %> </td>
  </tr>   
   <%end%>   
   <%end%>
 </table>
 </div>
 
-  <div class="large-3 column medium-3 column small-3 column" style="border: 2px solid #466d98; height: 600px;">
+  <div class="large-3 column medium-3 column small-3 column" style="border: 2px solid #466d98; height: 600px; font-family: 'Paytone One', sans-serif;">
     <h1><a href="/real_estate_pros/new" class="button">Add New Realtor</a></h1>
     </br>
+    <%= "You have #{@realtorcaption.count} realtors that need visits" %>
   </br>
 </br>
      <p>Search the realtor database</p>
-<h1><%= form_tag('/real_estate_pros/index') do%>
-    <p><%=search_field_tag :search, params[:search]%></p>
-    <%= submit_tag  :search, :class => "button", :name => nil%>
-  <%end%>
+      <h1><%= form_tag('/real_estate_pros/index') do%>
+       <p><%=search_field_tag :search, params[:search]%></p>
+          <%= submit_tag  :search, :class => "button", :name => nil%>
+          <%end%>
   
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "button" %>
-
-</h1>
+          <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "button" %>
+       </h1>
   </div>
 </div>
-</br> 

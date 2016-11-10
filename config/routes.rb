@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  get 'real_estate_pros/login_bypass' => 'real_estate_pros#login_bypass'
   devise_for :users
   match ':controller(/:action(/:id))', :via => [:get, :post]
   

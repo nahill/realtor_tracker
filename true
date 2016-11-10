@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20160812033135_add_index_to_realtors.rb
