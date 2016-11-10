@@ -90,7 +90,6 @@ class RealEstateProsController < ApplicationController
     
 end
 
-
  private 
 
 def realtor_params
