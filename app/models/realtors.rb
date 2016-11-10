@@ -16,8 +16,6 @@ class Realtors < ActiveRecord::Base
     end
   end
 
-  
-  
   def self.dedupe
     #find all models and group them on keys which should be common
     grouped = all.group_by{|model| [model.office_name]}

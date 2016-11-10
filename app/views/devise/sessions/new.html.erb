@@ -45,9 +45,13 @@
    
                     
                   <%= f.submit "Log in", class: "button round" %>
+                  
                     
     <% end %>
 </div>
+
+<%= link_to("Skip log in", '/real_estate_pros/login_bypass') %><br/>
+
 <%= render "devise/shared/links" %>
 
 </body>

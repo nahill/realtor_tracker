@@ -1,6 +1,7 @@
 class RealEstateProsController < ApplicationController
       before_action :authenticate_user!
-
+      skip_before_action :authenticate_user!, :only => :login_bypass
+      
   def index
     #Oops messed up naming conventions
     realtors = Realtors.realtor_search("#{(params[:search])}")
@@ -17,11 +18,26 @@ class RealEstateProsController < ApplicationController
       end
     end
   end
+  
+  def login_bypass
+     realtors = Realtors.realtor_search("#{(params[:search])}")
+    @realtypros = realtors.sort_by{|r| r[:office_name]}
+    
+    visitchk = Realtors.all
+    
+    @realtorcaption = []
+    
+    visitchk.each do |chk|
+      if chk.go_visit?
+        @realtorcaption.push(chk)
+      else
+      end
+    end
+    render 'index'
+  end
 
   def show
     @realtypros = Realtors.find_by_id(params[:id])
-    
-    
   end
 
   def new
