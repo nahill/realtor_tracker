@@ -3,7 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link href='https://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+    <style>
+    .tag {
+      font-family: 'Paytone One', sans-serif;
+      }
+    </style>
     <title><%= content_for?(:title) ? yield(:title) : "Realtor Tracker" %></title>
     <%= javascript_include_tag :defaults %>
     <%= stylesheet_link_tag    "application" %>
@@ -14,10 +19,10 @@
 
   <body align='center'>
     
-    
-    <div class="notice" style="color:red"><%= notice %></div>
-      <div  class="alert"><%= alert %></div>
-      
+  <% if notice.present? || alert.present? %>  
+    <div class="notice" style="color:red"><h4 class ="tag"><%= notice %></h4></div>
+      <div class="alert"><%= alert %></div>
+  <%end%>    
     
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
