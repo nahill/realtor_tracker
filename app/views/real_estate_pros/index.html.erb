@@ -52,7 +52,7 @@
 </br>
      <p>Search the realtor database</p>
       <h1><%= form_tag('/real_estate_pros/index') do%>
-       <p><%=search_field_tag :search, params[:search]%></p>
+       <p><%= search_field_tag :search, params[:search]%></p>
           <%= submit_tag  :search, :class => "button", :name => nil%>
           <%end%>
   

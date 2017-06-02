@@ -4,7 +4,7 @@ class RealEstateProsController < ApplicationController
       
   def index
     #Oops messed up naming conventions
-    realtors = Realtors.realtor_search("#{(params[:search])}")
+    realtors = Realtors.realtor_search("#{params[:search]}")
     @realtypros = realtors.sort_by{|r| r[:office_name]}
     
     visitchk = Realtors.all
