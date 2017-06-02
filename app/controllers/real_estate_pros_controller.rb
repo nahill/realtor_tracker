@@ -45,6 +45,7 @@ class RealEstateProsController < ApplicationController
   end
   
   def create
+    realtor_params[:office_name].upcase!
     @realtypros= Realtors.new(realtor_params)
     if @realtypros.save
       redirect_to(:action => 'index')
