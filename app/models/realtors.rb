@@ -2,7 +2,7 @@ class Realtors < ActiveRecord::Base
   validates :office_name, :presence => true
   validates :last_visited, :presence => true
   
-  scope :realtor_search, -> (office_name) { where("office_name like ?", "#{office_name}%").reorder(:office_name)}
+  scope :realtor_search, -> (office_name) { where("office_name like ?", "#{office_name.upcase}%").reorder(:office_name)}
 
   
   def go_visit?
