@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407211422) do
+ActiveRecord::Schema.define(version: 20170602170157) do
 
   create_table "realtors", force: true do |t|
     t.string   "office_name"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20160407211422) do
     t.string   "notes"
     t.boolean  "visit_needed"
   end
+
+  add_index "realtors", ["office_name"], name: "index_realtors_on_office_name"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
